@@ -1,21 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/HomeScreen';
+import TicketsScreen from './screens/TicketsScreen';
+import TicketDetailsScreen from './screens/TicketDetailsScreen'; 
+import MoreScreen from './screens/MoreScreen';
+import SupportScreen from './screens/SupportScreen';
+import CreateTicketScreen from './screens/CreateTicketScreen';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Tickets" component={TicketsScreen} />
+        <Stack.Screen name="TicketDetails" component={TicketDetailsScreen} /> 
+        <Stack.Screen name="More" component={MoreScreen} />
+        <Stack.Screen name="Support" component={SupportScreen} />
+        <Stack.Screen name="CreateTicket" component={CreateTicketScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

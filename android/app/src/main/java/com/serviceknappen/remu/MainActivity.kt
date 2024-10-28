@@ -1,4 +1,4 @@
-package com.myfirstapp
+package com.serviceknappen.remu
 
 import android.os.Build
 import android.os.Bundle

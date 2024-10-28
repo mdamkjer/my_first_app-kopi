@@ -1,4 +1,4 @@
-package com.myfirstapp
+package com.serviceknappen.remu
 
 import android.app.Application
 import android.content.res.Configuration
